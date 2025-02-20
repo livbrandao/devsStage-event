@@ -1,10 +1,13 @@
 import Image from 'next/image'
 
+import { getRanking } from '@/http/api'
 import medal_cooper from '../../../assets/medal_cooper.svg'
 import medal_gold from '../../../assets/medal_gold.svg'
 import medal_silver from '../../../assets/medal_silver.svg'
 
-export default function Ranking() {
+export default async function Ranking() {
+  const { ranking } = await getRanking()
+
   return (
     <div className="w-full max-w-[440px] space-y-5">
       <h2 className="text-gray-200 text-xl font-heading font-semibold leading-none">
@@ -12,49 +15,46 @@ export default function Ranking() {
       </h2>
 
       <div className="space-y-5">
-        <div className="relative bg-gray-700 border border-gray-600 p-6 flex flex-col justify-center gap-3 rounded-xl">
-          <span className="text-sm text-gray-300 leading-none">
-            <span className="font-semibold">1°</span> | André Souza
-          </span>
-          <span className="font-heading text-2xl font-semibold text-gray-200 leading-none">
-            1.128
-          </span>
+        {ranking.map((item, index) => {
+          const rankingPosition = index + 1
 
-          <Image
-            src={medal_gold}
-            alt="medal_gold"
-            className="absolute top-0 right-8"
-          />
-        </div>
+          return (
+            <div
+              key={item.id}
+              className="relative bg-gray-700 border border-gray-600 p-6 flex flex-col justify-center gap-3 rounded-xl"
+            >
+              <span className="text-sm text-gray-300 leading-none">
+                <span className="font-semibold">{rankingPosition}°</span> |{' '}
+                {item.name}
+              </span>
+              <span className="font-heading text-2xl font-semibold text-gray-200 leading-none">
+                {item.score}
+              </span>
 
-        <div className="relative bg-gray-700 border border-gray-600 p-6 flex flex-col justify-center gap-3 rounded-xl">
-          <span className="text-sm text-gray-300 leading-none">
-            <span className="font-semibold">2°</span> | Melissa Loures
-          </span>
-          <span className="font-heading text-2xl font-semibold text-gray-200 leading-none">
-            928
-          </span>
-
-          <Image
-            src={medal_silver}
-            alt="medal_silver"
-            className="absolute top-0 right-8"
-          />
-        </div>
-        <div className="relative bg-gray-700 border border-gray-600 p-6 flex flex-col justify-center gap-3 rounded-xl">
-          <span className="text-sm text-gray-300 leading-none">
-            <span className="font-semibold">3°</span> | Rodrigo Gonçalves
-          </span>
-          <span className="font-heading text-2xl font-semibold text-gray-200 leading-none">
-            875
-          </span>
-
-          <Image
-            src={medal_cooper}
-            alt="medal_cooper"
-            className="absolute top-0 right-8"
-          />
-        </div>
+              {rankingPosition === 1 && (
+                <Image
+                  src={medal_gold}
+                  alt="medal_gold"
+                  className="absolute top-0 right-8"
+                />
+              )}
+              {rankingPosition === 2 && (
+                <Image
+                  src={medal_silver}
+                  alt="medal_silver"
+                  className="absolute top-0 right-8"
+                />
+              )}
+              {rankingPosition === 3 && (
+                <Image
+                  src={medal_cooper}
+                  alt="medal_cooper"
+                  className="absolute top-0 right-8"
+                />
+              )}
+            </div>
+          )
+        })}
       </div>
     </div>
   )
