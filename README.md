@@ -16,7 +16,6 @@ O layout completo da aplicação está disponível no Figma:
 
 ### Front-end
 
-- [Vite](https://vitejs.dev/)
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Next.js](https://nextjs.org/)
@@ -70,7 +69,7 @@ $ npm install
 # Execute a aplicação em modo de desenvolvimento
 $ npm run dev
 
-# O servidor inciará na porta:3000 - acesse http://localhost:3000
+# O servidor inciará na porta:3000 - acesse http://localhost:3000/devsStage-event
 ```
 
 ## 🔗 Funcionalidades do Sistema de Convites

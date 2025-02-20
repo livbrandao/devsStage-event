@@ -2,11 +2,14 @@
   "name": "web-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://livbrandao.github.io/devsStage-event",
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.0",
@@ -26,6 +29,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "gh-pages": "^6.3.0",
     "orval": "^7.5.0",
     "typescript": "^5"
   }
