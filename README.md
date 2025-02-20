@@ -1,34 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![devStage](src/assets/logo.svg)
 
-## Getting Started
+# CodeCraft Summit 2025
 
-First, run the development server:
+## 💻 Sobre o projeto
+
+Plataforma web desenvolvida para o CodeCraft Summit 2025, um evento online e gratuito para desenvolvedores. O projeto permite que usuários se inscrevam no evento e participem de um sistema de indicações, onde podem convidar outras pessoas e concorrer a prêmios exclusivos ao entrar no ranking.
+
+## 🎨 Layout
+
+O layout completo da aplicação está disponível no Figma:
+
+- [Style Guide - DevStage](<https://www.figma.com/design/Qs4SacGG29PxJkMjFzWaVI/NLW-Connect-%E2%80%A2-DevStage-(Community)?node-id=0-1&t=ffr5c1sKtRdtShh7-1>)
+
+## 🚀 Tecnologias utilizadas
+
+### Front-end
+
+- [Vite](https://vitejs.dev/)
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React Hook Form](https://react-hook-form.com/)
+- [Zod](https://zod.dev/)
+- [Lucide React](https://lucide.dev/)
+- [Biome](https://biomejs.dev/)
+- [Orval](https://orval.dev/)
+
+### Back-end
+
+- API desenvolvida em Node.js (disponível em [rocketseat-education/nlw-connect-node](https://github.com/rocketseat-education/nlw-connect-node))
+- Docker para o banco de dados
+
+## ✨ Funcionalidades
+
+- Página inicial com informações do evento
+- Formulário de inscrição com validações
+- Sistema de convites e indicações
+- Ranking de indicações
+- Link personalizado para cada inscrito
+- Integração com backend para:
+  - Cadastro no evento
+  - Registro de links de acesso
+  - Listagem do ranking de indicações
+  - Contagem de inscrições por link
+
+## 🏗️ Estrutura do Projeto
+
+O projeto foi estruturado seguindo o Style Guide do Figma, com uma organização clara de componentes e páginas. Principais características:
+
+- Utilização de rotas dinâmicas no Next.js para gerenciar IDs de inscritos
+- Componentes reutilizáveis e tipados
+- Integração com backend utilizando cliente HTTP gerado pelo Orval
+- Sistema de validação de formulários com React Hook Form e Zod
+- Estilização utilizando Tailwind CSS com classes personalizadas
+
+## 🚀 Como executar o projeto
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone este repositório
+$ git clone https://github.com/livbrandao/devsStage-event.git
+
+# Acesse a pasta do projeto no terminal
+$ cd devsStage-event
+
+# Instale as dependências
+$ npm install
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm run dev
+
+# O servidor inciará na porta:3000 - acesse http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔗 Funcionalidades do Sistema de Convites
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Geração de links únicos para cada inscrito
+- Rastreamento de inscrições através do parâmetro `referrer`
+- Página personalizada para acompanhamento de indicações
+- Sistema de ranking em tempo real
+- Contadores de visualizações e conversões por link
 
-## Learn More
+## 📱 Layout Responsivo
 
-To learn more about Next.js, take a look at the following resources:
+O projeto conta com um design responsivo, adaptando-se a diferentes tamanhos de tela:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Layout mobile-first
+- Breakpoints customizados para tablets e desktops
+- Componentes adaptáveis utilizando Tailwind CSS
+- Otimização de imagens com Next.js Image
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠 Configurações Adicionais
 
-## Deploy on Vercel
+- Configuração do Biome para linting e formatação
+- Setup do Tailwind CSS com tema personalizado
+- Configuração do Orval para geração de tipos e clients
+- Tipagem estrita com TypeScript
+- Configurações de build e deploy com Next.js
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 Licença
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
